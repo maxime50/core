@@ -149,7 +149,8 @@ export default class DataManager {
 
     usedWidth = '(' + usedWidth.join(' + ') + ')';
     undefinedWidthColumns.forEach((columnDef) => {
-      columnDef.tableData.width = columnDef.tableData.initialWidth = `calc((100% - ${usedWidth}) / ${undefinedWidthColumns.length})`;
+      columnDef.tableData.width =
+        columnDef.tableData.initialWidth = `calc((100% - ${usedWidth}) / ${undefinedWidthColumns.length})`;
     });
   }
 
@@ -716,7 +717,12 @@ export default class DataManager {
   // =====================================================================================================
 
   filterData = () => {
-    this.searched = this.grouped = this.treefied = this.sorted = this.paged = false;
+    this.searched =
+      this.grouped =
+      this.treefied =
+      this.sorted =
+      this.paged =
+        false;
 
     this.filteredData = [...this.data];
 
@@ -1137,11 +1143,12 @@ export default class DataManager {
 
         sortTree(this.sortedData);
       }
+      //INFO: Arrive ici ??
     } else if (this.isDataType('normal')) {
-      this.sortedData = [...this.searchedData];
-      if (this.orderBy != -1 && this.applySort) {
-        this.sortedData = this.sortList(this.sortedData);
-      }
+      // this.sortedData = [...this.searchedData];
+      // if (this.orderBy != -1 && this.applySort) {
+      //   this.sortedData = this.sortList(this.sortedData);
+      // }
     }
 
     this.sorted = true;
